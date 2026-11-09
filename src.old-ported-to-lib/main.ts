@@ -9,7 +9,7 @@
 //  5. 全部发送给插件 UI（iframe）打包下载
 // ============================================================
 
-const FORMAT = 'mastergo-claude-export'
+const FORMAT = 'MasterGoExportToJSON'
 const FORMAT_VERSION = 1
 const MAX_IMAGES = 200 // 防止文件过大，最多提取的图片素材数量
 
@@ -981,7 +981,7 @@ async function main(): Promise<void> {
     mg.notify('导出完成，请在插件面板中下载文件', { type: 'success' })
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err)
-    console.error('[mastergo-claude-export]', err)
+    console.error('[MasterGoExportToJSON]', err)
     mg.ui.postMessage({ type: 'export-error', message })
     mg.notify(message, { type: 'error' })
   }

@@ -11,7 +11,7 @@
 
 import { PluginMessage, sendMsgToUI, UIMessage } from '@messages/sender'
 
-const FORMAT = 'mastergo-claude-export'
+const FORMAT = 'MasterGoExportToJSON'
 const FORMAT_VERSION = 2 // v2：design.json 按一级蒙版组拆分为 pages/*.json
 const MAX_IMAGES = 200 // 防止文件过大，最多提取的图片素材数量
 const MAX_PNG = 30 // 超过此数量的画板不再生成 PNG 预览（仅 SVG）
@@ -1485,7 +1485,7 @@ function runExport(scope: ExportScope, indices: number[] = []): void {
         return
       }
       const message = err instanceof Error ? err.message : String(err)
-      console.error('[mastergo-claude-export]', err)
+      console.error('[MasterGoExportToJSON]', err)
       sendMsgToUI({ type: PluginMessage.EXPORT_ERROR, data: { token, message } })
       mg.notify(message, { type: 'error' })
     }
@@ -1515,7 +1515,7 @@ function exportFramePng(index1: number, scale: number): void {
       })
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err)
-      console.error('[mastergo-claude-export] 单画板 PNG 导出失败', err)
+      console.error('[MasterGoExportToJSON] 单画板 PNG 导出失败', err)
       sendMsgToUI({ type: PluginMessage.PNG_ERROR, data: { message } })
     }
   })
@@ -1558,7 +1558,7 @@ function exportAllPng(scales: number[]): void {
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err)
-      console.error('[mastergo-claude-export] 批量 PNG 导出失败', err)
+      console.error('[MasterGoExportToJSON] 批量 PNG 导出失败', err)
       sendMsgToUI({ type: PluginMessage.PNG_ERROR, data: { message } })
     }
   })

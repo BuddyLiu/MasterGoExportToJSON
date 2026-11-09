@@ -1765,7 +1765,7 @@ async function downloadZip(): Promise<void> {
     // 打包链路任一环失败（canvas 编码、图片解码、JSZip 写入等）都要明确提示：
     // 没有这里，异常会以 unhandled rejection 静默冒出，用户只看到「打包中…」一闪就没了反馈
     const message = err instanceof Error ? err.message : String(err)
-    console.error('[mastergo-claude-export] ZIP 打包失败', err)
+    console.error('[MasterGoExportToJSON] ZIP 打包失败', err)
     showNotice(`打包失败：${message}`)
   } finally {
     zipping.value = false

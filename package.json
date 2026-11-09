@@ -1,5 +1,5 @@
 {
-  "name": "mastergo-claude-export",
+  "name": "MasterGoExportToJSON",
   "version": "1.0.0",
   "description": "导出 MasterGo 设计稿为 Claude Code 可读的结构化文件（design.json + 素材 + SVG/PNG 预览 + 说明文档）",
   "private": true,
