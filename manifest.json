@@ -1,0 +1,12 @@
+{
+  "name": "Export to JSON",
+  "id": 207860235375744,
+  "api": "1.0.0",
+  "main": "dist/main.js",
+  "ui": "dist/index.html",
+  "editor_type": ["canvas", "devMode"],
+  "capabilities": ["inspect"],
+  "menu": [
+    { "name": "打开插件", "command": "open-plugin" }
+  ]
+}
