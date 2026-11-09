@@ -1,5 +1,5 @@
 {
-  "name": "Export to JSON",
+  "name": "MasterGoExportToJSON",
   "id": 207860235375744,
   "api": "1.0.0",
   "main": "dist/main.js",
